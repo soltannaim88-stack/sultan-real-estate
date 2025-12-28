@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width initial-scale=1.0">
+    <title>مجموعة سلطان العالمية</title>
+    <style>
+      /* تنسيق الصفحة العام */
+      container {
+        background: rgba(5, 248, 167, 0.15); /* لون أبيض شفاف جداً */
+        backdrop-filter: blur(
+          15px
+        ); /* هاد السطر بيعمل تغبيش ورا الصندوق بيطلع فخم */
+        -webkit-backdrop-filter: blur(15px);
+        border: 1px solid rgba(255, 255, 255, 0.2); /* حدود ناعمة */
+        padding: 40px;
+        border-radius: 20px;
+        color: rgb(212, 239, 6); /* منخلي كل الخطوط بيضاء عشان تبين ع الخلفية الغامقة */
+        text-align: center;
+        max-width: 600px;
+      }
+
+      /* تعديل العناوين والنصوص لتصير واضحة */
+      h1,
+      p {
+        color: #ffffff;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* ظل خفيف ورا الكلام عشان ينقرأ بسهولة */
+      }
+
+      /* تنسيق قسم الخدمات (الجدول/المربعات) */
+      .services-container {
+        display: flex;
+        justify-content: center;
+        gap: 15px;
+        margin-top: 30px;
+      }
+
+      .card {
+        background: rgba(228, 116, 4, 0.751); /* شفافية أقل للصناديق الصغيرة */
+        padding: 15px;
+        border-radius: 12px;
+        width: 130px;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        transition: 0.3s;
+      }
+
+      .card:hover {
+        background: rgba(41, 156, 141, 0.375); /* بتضوي لما تمرر الماوس */
+        transform: translateY(-5px); /* بتطلع لفوق شوي */
+      }
+
+      body {
+        background-image: url("https://images.unsplash.com/photo-1512453979798-5ea266f8880c");
+        background-size: cover; /* لتغطي الشاشة كلها */
+        background-attachment: fixed; /* لتضل ثابتة وأنت بتنزل بالموقع */
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+      }
+
+      /* الصندوق الرئيسي */
+      .container {
+        background-color: #f9f9f9;
+        padding: 40px;
+        border-radius: 20px;
+        box-shadow: 0 10px 30px rgba(172, 162, 162, 0.366);
+        max-width: 500px;
+        text-align: center;
+      }
+
+      h1 {
+        color: #f7af07;
+        margin-bottom: 15px;
+      }
+
+      p {
+        color: #121513;
+        font-size: 18px;
+        margin-bottom: 30px;
+      }
+
+      /* --- كود الزر الأسطوري Button-85 --- */
+      .button-85 {
+        padding: 0.6em 2em;
+        border: none;
+        outline: none;
+        color: rgb(255, 255, 255);
+        background: #111111;
+        cursor: pointer;
+        position: relative;
+        z-index: 0;
+        border-radius: 10px;
+        user-select: none;
+        -webkit-user-select: none;
+        touch-action: manipulation;
+        display: inline-block; /* ليضل بالنص */
+        text-decoration: none;
+        font-weight: bold;
+      }
+
+      .button-85:before {
+        content: "";
+        background: linear-gradient(
+          45deg,
+          #ff0000,
+          #ff7300,
+          #fffb00,
+          #48ff00,
+          #00ffd5,
+          #002bff,
+          #7a00ff,
+          #ff00c8,
+          #ff0000
+        );
+        position: absolute;
+        top: -2px;
+        left: -2px;
+        background-size: 400%;
+        z-index: -1;
+        filter: blur(5px);
+        -webkit-filter: blur(5px);
+        width: calc(100% + 4px);
+        height: calc(100% + 4px);
+        animation: glowing-button-85 20s linear infinite;
+        transition: opacity 0.3s ease-in-out;
+        border-radius: 10px;
+      }
+
+      @keyframes glowing-button-85 {
+        0% {
+          background-position: 0 0;
+        }
+        50% {
+          background-position: 400% 0;
+        }
+        100% {
+          background-position: 0 0;
+        }
+      }
+
+      .button-85:after {
+        z-index: -1;
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background: #2c3e50; /* لون الزر من الداخل */
+        left: 0;
+        top: 0;
+        border-radius: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>مجموعة سلطان العالمية للعقارات</h1>
+      <p>نحن نساعدك في بناء مستقبلك واستثمار أموالك في العقارات الرابحة</p>
+
+      <a href="#" class="button-85" role="button">تواصل معنا الآن</a>
+    </div>
+    <div class="services-container">
+      <div class="card">
+        <h3>شراء عقارات</h3>
+        <p>أفضل الشقق والفلل في أرقى المناطق.</p>
+      </div>
+      <div class="card">
+        <h3>بيع وتأجير</h3>
+        <p>نضمن لك أسرع عملية بيع بأفضل سعر.</p>
+      </div>
+      <div class="card">
+        <h3>استشارات</h3>
+        <p>نساعدك في استثمار أموالك بذكاء.</p>
+      </div>
+    </div>
+  </body>
+</html>
