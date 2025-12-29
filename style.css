@@ -1,0 +1,140 @@
+/* إعدادات الخط والألوان الأساسية */
+:root {
+  --duration: 7s;
+  --easing: linear;
+  --c-color-1: rgba(255, 163, 26, 0.7);
+  --c-color-2: #1a23ff;
+  --c-color-3: #e21bda;
+  --c-color-4: rgba(255, 232, 26, 0.7);
+  --c-shadow: rgba(255, 223, 87, 0.5);
+  --c-shadow-inset-top: rgba(255, 223, 52, 0.9);
+  --c-shadow-inset-bottom: rgba(255, 250, 215, 0.8);
+  --c-radial-inner: #ffd215;
+  --c-radial-outer: #fff172;
+}
+
+body {
+  font-family: 'Cairo', sans-serif;
+  background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url("https://images.unsplash.com/photo-1512453979798-5ea266f8880c");
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+  overflow-x: hidden;
+}
+
+/* تأثير القزاز (Glassmorphism) */
+.glass-effect {
+  background: rgba(228, 121, 6, 0.3) !important;
+  backdrop-filter: blur(15px) !important;
+  -webkit-backdrop-filter: blur(15px);
+  border: 1px solid rgba(255, 255, 255, 0.2) !important;
+  border-radius: 24px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+  transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  color: white;
+  text-align: center;
+}
+
+.container {
+  padding: 50px;
+  max-width: 550px;
+  margin-bottom: 40px;
+}
+
+.services-container {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  flex-wrap: wrap;
+}
+
+.card {
+  padding: 30px 20px;
+  width: 170px;
+}
+
+/* حركات التفاعل (Hover) */
+.glass-effect:hover {
+  transform: translateY(-15px) scale(1.05);
+  background: rgba(228, 121, 6, 0.5) !important;
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
+}
+
+h1 { color: #f7af07; font-size: 2.2rem; margin-bottom: 20px; }
+.icon { font-size: 2.5rem; margin-bottom: 10px; }
+
+/* --- كود الزر المتحرك (Uiverse) بالتفصيل الممل --- */
+.uiverse {
+  -webkit-appearance: none;
+  outline: none;
+  position: relative;
+  cursor: pointer;
+  border: none;
+  display: table;
+  border-radius: 24px;
+  padding: 0;
+  margin: 30px auto 0;
+  background: radial-gradient(circle, var(--c-radial-inner), var(--c-radial-outer) 80%);
+  box-shadow: 0 0 14px var(--c-shadow);
+}
+
+.uiverse:before {
+  content: ""; position: absolute; z-index: 3; left: 0; top: 0; right: 0; bottom: 0;
+  border-radius: 24px; box-shadow: inset 0 3px 12px var(--c-shadow-inset-top), inset 0 -3px 4px var(--c-shadow-inset-bottom);
+}
+
+.uiverse .wrapper {
+  overflow: hidden; border-radius: 24px; min-width: 160px; padding: 15px 30px; position: relative;
+}
+
+.uiverse .wrapper span {
+  display: inline-block; position: relative; z-index: 10; font-weight: 700; font-size: 18px; color: #fff; text-shadow: 1px 1px 4px rgba(0,0,0,0.3);
+}
+
+.uiverse .wrapper .circle {
+  position: absolute; left: 0; top: 0; width: 40px; height: 40px; border-radius: 50%;
+  filter: blur(var(--blur, 8px)); background: var(--background, transparent);
+  transform: translate(var(--x, 0), var(--y, 0)) translateZ(0);
+  animation: var(--animation, none) var(--duration) var(--easing) infinite;
+}
+
+/* توزيع الدوائر الـ 12 بكل تفاصيلها */
+.circle-1 { --background: var(--c-color-4); --x: 0; --y: -40px; --animation: circle-1; }
+.circle-2 { --background: var(--c-color-1); --x: 92px; --y: 8px; --animation: circle-2; }
+.circle-3 { --background: var(--c-color-2); --blur: 14px; --x: -12px; --y: -12px; --animation: circle-3; }
+.circle-4 { --background: var(--c-color-2); --blur: 14px; --x: 80px; --y: -12px; --animation: circle-4; }
+.circle-5 { --background: var(--c-color-3); --blur: 16px; --x: 12px; --y: -4px; --animation: circle-5; }
+.circle-6 { --background: var(--c-color-3); --blur: 16px; --x: 56px; --y: 16px; --animation: circle-6; }
+.circle-7 { --background: var(--c-color-1); --x: 8px; --y: 28px; --animation: circle-7; }
+.circle-8 { --background: var(--c-color-1); --x: 28px; --y: -4px; --animation: circle-8; }
+.circle-9 { --background: var(--c-color-4); --x: 20px; --y: -12px; --animation: circle-9; }
+.circle-10 { --background: var(--c-color-4); --x: 64px; --y: 16px; --animation: circle-10; }
+.circle-11 { --background: var(--c-color-1); --x: 4px; --y: 4px; --animation: circle-11; }
+.circle-12 { --background: var(--c-color-1); --blur: 14px; --x: 52px; --y: 4px; --animation: circle-12; }
+
+/* حركات الأنيميشن الـ 12 بالتفصيل */
+@keyframes circle-1 { 33% { transform: translate(0px, 16px); } 66% { transform: translate(12px, 64px); } }
+@keyframes circle-2 { 33% { transform: translate(80px, -10px); } 66% { transform: translate(72px, -48px); } }
+@keyframes circle-3 { 33% { transform: translate(20px, 12px); } 66% { transform: translate(12px, 4px); } }
+@keyframes circle-4 { 33% { transform: translate(76px, -12px); } 66% { transform: translate(112px, -8px); } }
+@keyframes circle-5 { 33% { transform: translate(84px, 28px); } 66% { transform: translate(40px, -32px); } }
+@keyframes circle-6 { 33% { transform: translate(28px, -16px); } 66% { transform: translate(76px, -56px); } }
+@keyframes circle-7 { 33% { transform: translate(8px, 28px); } 66% { transform: translate(20px, -60px); } }
+@keyframes circle-8 { 33% { transform: translate(32px, -4px); } 66% { transform: translate(56px, -20px); } }
+@keyframes circle-9 { 33% { transform: translate(20px, -12px); } 66% { transform: translate(80px, -8px); } }
+@keyframes circle-10 { 33% { transform: translate(68px, 20px); } 66% { transform: translate(100px, 28px); } }
+@keyframes circle-11 { 33% { transform: translate(4px, 4px); } 66% { transform: translate(68px, 20px); } }
+@keyframes circle-12 { 33% { transform: translate(56px, 0px); } 66% { transform: translate(60px, -32px); } }
+
+/* الموبايل */
+@media (max-width: 768px) {
+  .services-container { flex-direction: column; align-items: center; }
+  .card { width: 85%; }
+  h1 { font-size: 1.8rem; }
+}
